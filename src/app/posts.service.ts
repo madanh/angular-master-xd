@@ -20,7 +20,7 @@ export class PostsService {
   
   getPosts(): void {
     this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => this.posts = posts.slice(1,10));
+      .subscribe(posts => this.posts = posts.slice(0,10));
     //could have used the jsonplaceholder's query param "limit"
     //like https://jsonplaceholder.typicode.com/posts?_limit=10
     //instead of slicing. Haven't figured if httpclient could tokenize 
