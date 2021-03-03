@@ -1,16 +1,30 @@
-<table *ngIf="postsService.posts.length">
-  <thead><tr><th>id</th><th>title</th></tr></thead>
-  <tbody>
-    <tr *ngFor="let post of postsService.posts; let even = even; let odd = odd" [ngClass]="{'even': even}">
-      <td>{{ post.id }}</td>
-      <td>
-        <span><a [routerLink]="'/post/'+post.id+'/comments'">{{ post.title }}</a></span>
-          <span>
-          <button mat-icon-button aria-label="Example icon-button with a heart icon">
-            <mat-icon (click)=deleteRow(post.id)>delete</mat-icon>
-          </button>
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div 
+  style="display: flex; justify-content: center;"
+>
+  <table *ngIf="postsService.posts.length; else loading">
+    <thead><tr><th>id</th><th>title</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let post of postsService.posts; let even = even; let odd = odd" [ngClass]="{'even': even}">
+        <td>{{ post.id }}</td>
+        <td width="800px">
+          <div class="flex-container">
+            <span>
+              <a [routerLink]="'/post/'+post.id+'/comments'">{{ post.title }}</a>
+            </span>
+            <span>
+              <button mat-icon-button aria-label="Example icon-button with a heart icon">
+                <mat-icon (click)=deleteRow(post.id)>delete</mat-icon>
+              </button>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loading>
+  <div class="container-center-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
