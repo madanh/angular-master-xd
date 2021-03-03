@@ -1,4 +1,4 @@
-<table *ngIf="postsService.posts.length">
+<table *ngIf="postsService.posts.length; else loading">
   <thead><tr><th>id</th><th>title</th></tr></thead>
   <tbody>
     <tr *ngFor="let post of postsService.posts; let even = even; let odd = odd" [ngClass]="{'even': even}">
@@ -14,3 +14,8 @@
     </tr>
   </tbody>
 </table>
+<ng-template #loading>
+  <div class="container-center-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

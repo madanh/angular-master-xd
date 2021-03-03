@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.container-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
 table, td, th {
   border: 1px solid black;
   border-collapse: collapse;
