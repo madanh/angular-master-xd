@@ -8,8 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatButtonModule} from '@angular/material/button'; 
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'; 
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CommentsComponent } from './comments/comments.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
