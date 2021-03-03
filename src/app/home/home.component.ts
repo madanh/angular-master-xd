@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   getPosts(){
-    this.postsService.getPosts().subscribe();
+    this.postsService.getPosts();
   }
 }

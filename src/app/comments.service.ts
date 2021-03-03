@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 export interface Comment {
   postId: number,
@@ -15,7 +14,6 @@ export interface Comment {
   providedIn: 'root'
 })
 export class CommentsService {
-  // https://jsonplaceholder.typicode.com/posts/{id}/comments 
   postId;
   constructor(private http: HttpClient) { }
 
