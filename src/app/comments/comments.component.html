@@ -1,1 +1,6 @@
-<p>comments works!</p>
+<h3>Comments for post: {{ postId }}</h3>
+<div *ngFor="let comment of comments">
+  <h4><span>{{comment.name}}</span><span>{{comment.email}}</span></h4>
+  <div>{{comment.body}}</div>
+</div>
+
