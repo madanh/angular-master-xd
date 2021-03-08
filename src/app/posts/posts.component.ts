@@ -10,7 +10,9 @@ export class PostsComponent implements OnInit {
   constructor(public postsService: PostsService) { }
 
   ngOnInit(): void {
-    this.postsService.getPosts();
+    if(!this.postsService.posts.length){
+      this.postsService.getPosts();
+    }
   }
   
   deleteRow(id: number){
